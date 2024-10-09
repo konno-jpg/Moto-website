@@ -1,0 +1,338 @@
+<html>
+
+<head>
+    <title>Motorrad</title>
+	
+	<meta charset="utf-8">
+
+    <link rel="shortcut icon" type="x-icon" href="favicon.png">
+
+	<script src="https://kit.fontawesome.com/f46d27c8d2.js" crossorigin="anonymous" ></script>
+    <script src="moto.js" defer></script>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+		.loginbox {
+			width: 450px;
+			background-color: rgba(115, 117, 226, 0.918);
+            color: white;
+            border: 2px solid black;
+            border-radius: 30px;
+            overflow: hidden;
+            transform: translateX(-300px);
+            transition: 0.2s;
+		}
+        .transformLoginbox {
+            transform: translateX(0);
+            transition: 0.2s;
+        }
+		.loginbox h1 {
+			color: white;
+            text-align: center;
+            padding-top: 10px;
+		}
+        .loginbox form {
+            text-align: center;
+            position: relative;
+        }
+		.logincontainer {
+			width: 100%;
+			top: 20%;
+			text-align: center;
+            display: flex;
+            justify-content: center;
+            position: fixed;
+            z-index: 2;
+            opacity: 0;
+            transition: 0.2s;
+            margin: auto;
+            transform: translateX(-300px);
+            z-index: -1;
+		}
+        .logincontainer::after {
+            content: "";
+            position: absolute;
+            width: 450px;
+            height: 100%;
+            background: white;
+            top: 0;
+            z-index: -1;
+            filter: blur(1rem);
+        }
+        .openMenu {
+            opacity: 1;
+            transition: 0.2s;
+            margin: auto;
+            transform: translateX(0);
+            z-index: 2;
+        }
+        .inputbox {
+            width: 100%;
+            height: 50px;
+            margin-top: 30px;
+            position: relative;
+        }
+        .inputbox input {
+            width: 85%;
+            height: 100%;
+            background: transparent;
+            border: 2px solid black;
+            border-radius: 40px;
+            outline: none;
+            font-size: 120%;
+            color: white;
+            padding-left: 20px;
+            transition: 0.3s;
+        }
+        .inputbox input::placeholder {
+            color: white;
+        }
+        .inputbox:hover input{
+            background: rgb(76, 77, 170);
+        }
+        .inputbox i {
+            position: absolute;
+            right: 55px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .cookies {
+            display: flex;
+            justify-content: space-around;
+            font-size: 120%;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        .cookies a {
+            text-decoration: none;
+            color: white;
+            transition: 0.3s;
+        }
+        .cookies a:hover {
+            color: black;
+        }
+        .btn {
+            width: 85%;
+            height: 40px;
+            text-align: center;
+            border-radius: 40px;
+            outline: none;
+            border: none;
+            border: 2px solid black;
+            cursor: pointer;
+            font-size: 120%;
+            background-color: rgba(115, 117, 226, 0.918);
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background-color: rgb(76, 77, 170);
+        }
+        .register {
+            justify-content: space-around;
+            display: flex;
+            align-items: center;
+            font-size: 120%;
+            margin-top: 15px;
+            padding-bottom: 5%;
+        }
+        .register a {
+            text-decoration: none;
+            color: white;
+            transition: 0.3s;
+        }
+        .register a:hover {
+            color: black;
+        }
+        .register p {
+            margin: 0;
+        }
+        .closeicon {
+            top: -2;
+            right: -2;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            background-color: rgb(76, 77, 170);
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            font-size: 2em;
+            border: 2px solid black;
+            border-bottom-left-radius: 20px;
+            cursor: pointer;
+        }
+        .background1 {
+            opacity: 0;
+        }
+        .background {
+            background-color: rgba(0, 0, 0, 0.849);
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 1;
+            transition-delay: 0.01s;
+            transition-duration: 0.3s;
+        }
+	</style>
+
+</head>
+
+<body>
+    <div id="C1" class="headercontainer">
+	    <div class="header">
+            <div class="headerlinks">links</div> 
+			<div class="headermitte">
+				<p><strong>Motorräder</strong></p>
+			</div>
+			<div class="headerrechts">
+                <p onclick="openLogin()">Login</p>
+            </div>
+	    </div>
+    </div>
+
+	<div class="logincontainer">
+	    <div class="loginbox">
+		    <form>
+                <div class="closeicon"><img src="X.png" height="20" onclick="closeLogin()"></div>
+                <h1>Login</h1>
+                <div class="inputbox">
+				    <input type="text" placeholder="Nutzername" maxlength="20" required>
+				    <i class="fa-solid fa-user"></i>
+			    </div>
+			    <div class="inputbox">
+				    <input type="passwort" placeholder="Passwort" maxlength="20" required>
+				    <i class="fa-solid fa-lock"></i>
+			    </div>
+			    <div class="cookies">
+				    <label><input type="checkbox">Cookies akzeptieren</label>
+				    <a href="">Passwort vergessen</a>
+			    </div>
+			    <button type="submit" class="btn">Login</button>
+			    <div class="register">
+				    <p>Noch kein Account?</p>
+                    <a href="">Registrieren</a>
+			    </div>
+		    </form>
+	    </div>
+    </div>
+    <div class="background1"></div>
+
+    <div class="bildercontainer">
+	    <div class="bild">
+            <span class="singlebild">
+                <img src="nakedbike.png" alt="bike" height="250">
+                <div class="singlebild-dropdown">
+                    <div class="bild-dropdown-container">
+                        <h3>hallo</h3>
+                        <div class="bild-dropdown-content">
+                            <p>text</p>
+                        </div>
+                    </div>
+                </div>
+            </span>
+            <span class="singlebild">
+                <img src="bike.png" alt="bike" height="250">
+                <div class="singlebild-dropdown">
+                    <div class="bild-dropdown-container">
+                        <h3>hallo</h3>
+                        <div class="bild-dropdown-content">
+                            <p>text</p>
+                        </div>
+                    </div>
+                </div>
+            </span>
+            <span class="singlebild">
+                <img src="sportler.png" alt="bike" height="250">
+                <div class="singlebild-dropdown">
+                    <div class="bild-dropdown-container">
+                        <h3>hallo</h3>
+                        <div class="bild-dropdown-content">
+                            <p>text</p>
+                        </div>
+                    </div>
+                </div>
+            </span>
+        </div>
+	</div>
+
+    <div class="boxoben">
+	    <div class="Umlink">
+		    <h2>Über mich</h2>
+		    <p class="hoverlinks"><a href="nix">Link</a></p>
+	    </div>
+    </div>
+
+	<ul class="Stichpunktheader"><strong>Stichpunkte</strong></ul>
+    <div class="sc">
+		<div class="liste">
+		    <div class="Stichpunkte">
+				<div class="droppercontainer">
+				    <p class="dropper">Text</p>
+				    <div class="content">
+					    <li>1</li>
+					    <li>2</li>
+					    <li>3</li>
+				    </div>
+			    </div>
+			</div>
+	        <div class="Stichpunkte">
+				<div class="droppercontainer">
+				    <p class="dropper">Text</p>
+				    <div class="content">
+					    <li>1</li>
+					    <li>2</li>
+					    <li>3</li>
+				    </div>
+			    </div>
+			</div>
+	        <div class="Stichpunkte">
+			    <div class="droppercontainer">
+				    <p class="dropper">Text</p>
+				    <div class="content">
+					    <li>1</li>
+					    <li>2</li>
+					    <li>3</li>
+				    </div>
+			    </div>
+			</div>
+	    </div>
+	</div>
+		
+	<div class= "boxunten">
+	    <div class= "FSlink">
+	        <h2>Über den Führerschein</h2>
+		    <p class="hoverlinks"><a href="Führerschein.html">Link</a></p>
+	    </div>
+	</div>
+	
+	<footer>
+	    <div class="footercontainer">
+			<nav class="navigation">
+			    <div class="informationen">
+		            <h3>Rechtliches</h3>
+				    <ul>
+					    <li><a class="infolinks" href="impressum.html">Impressum</a></li>
+                        <li><a class="infolinks" href="kontakt.html">Kontakt</a></li>
+						<li><a class="infolinks" href="https://www.google.de/maps/place/36251+Bad+Hersfeld/@50.8614585,9.6796444,15518m/data=!3m2!1e3!4b1!4m6!3m5!1s0x47a354816e26cc2f:0x422435029b0ac30!8m2!3d50.8701345!4d9.7019675!16zL20vMDFudzQ4?entry=ttu&g_ep=EgoyMDI0MDkyNS4wIKXMDSoASAFQAw%3D%3D">Standort</a></li>
+						<li><a class="infolinks" href="uebermich.html" >Über mich</a></li>
+                    <ul>
+		        </div>
+		        <div class="socials">
+				    <a href="https://www.tiktok.com"><img src="tiktok.png" alt="tiktok" height="40"></a>
+			        <a href="https://www.instagram.com"><img src="instagram.png" alt="instagram" height="40"></a>
+			        <a href="https://www.youtube.com"><img src="youtube.png" alt="youtube" height="40"></a>
+			        <a href="https://www.tuvsud.com"><img src="tuv.png" alt="tüv süd" height="40"></a>
+		        </div>
+			</nav>
+			<div class="legaltext">
+			    <p class="copyright">Copyright 2024 Konstantin-Wiens GmbH, all rights reserved</p>
+				<div class="nachoben"><a href="#C1">Nach oben<img class="arrow" src="arrow.png" alt="arrow"></a></div>
+			</div>
+		</div>
+	</footer>
+</body>
+
+</html>

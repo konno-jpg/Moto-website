@@ -1,0 +1,105 @@
+<html>
+
+<head>
+    <style>
+	    body {
+        background-color: powderblue;
+        }      
+		
+		table, th, td {
+		    border: 2px solid black;
+			background-color: rgb(84, 111, 152);
+			text-align: center;
+		}
+		th {
+            margin: 25px;
+		    font-size: 150%;
+			padding: 20px 0px;
+        }
+		td {
+		    font-size: 125%;
+			padding: 15px 0px;
+		}
+		caption {
+		    font-size: 200%;
+			font-family: verdana;
+			padding: 15px 0px;
+			border: 2px solid black;
+			background-color: rgb(34, 142, 210);
+		}
+		p {
+		    font-size: 250%;
+			font-family: verdana;
+		}
+		.Überschrift {
+		    background-color: rgb(34, 142, 210);
+			border: 2px solid black;
+			margin-top: 0.5%;
+			margin-bottom: 0.5%;
+			align-items: center;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.zur {
+			width: 40px;
+			float: left;
+		}
+		.tabelle {
+		    margin-top: 1.5%;
+		}
+		.Überschrift a{
+		    left: 0;
+			margin-left: 1%;
+			position: absolute;
+			align-items: center;
+		}
+	</style>
+	
+	<meta charset="utf-8">
+</head>
+
+<body>
+    <div class="Überschrift">
+	    <a href="website.html"><img class="zur" src="back.png" alt="zurück"></a>
+		<p>Führerschein und Kosten</p>
+	</div>
+   
+    <div class= "tabelle">
+	    <table width="50%" align="center">
+            <caption>Kosten</caption>
+		    <tr>
+		        <th>Feld1</th>
+			    <th>Feld2</th>
+			    <th>Feld3</th>
+	        </tr>
+		    <tr>
+		        <td>Feld1</td>
+			    <td>Feld2</td>
+			    <td>Feld3</td>
+	        </tr>
+		    <tr>
+		        <td>Feld1</td>
+			    <td>Feld2</td>
+			    <td>Feld3</td>
+	        </tr>
+		    <tr>
+		        <td>Feld1</td>
+			    <td>Feld2</td>
+			    <td>Feld3</td>
+	        </tr>
+		    <tr>
+		        <td>Feld1</td>
+			    <td>Feld2</td>
+			    <td>Feld3</td>
+	        </tr>
+		    <tr>
+		        <td>Feld1</td>
+			    <td>Feld2</td>
+			    <td>Feld3</td>
+	        </tr>
+	    </table>
+	</div class= "tabelle">
+</body>
+
+</html>

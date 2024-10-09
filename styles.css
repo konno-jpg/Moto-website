@@ -1,0 +1,366 @@
+html {
+	scroll-behavior: smooth;
+}
+body {
+    background-color: powderblue;
+    border: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+	position: relative;
+}
+.headercontainer {
+	padding-left: 5%;
+	padding-right: 5%;
+}
+.header {
+	align-items: center;
+	background-color: powderblue;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	border-bottom: 2px solid black;
+	display: flex;
+	justify-content: space-between;
+}
+.headerlinks {
+	color: black;
+	font-family: verdana;
+}
+.headermitte {
+	background-color: transparent;
+	text-align: center;
+	font-family: verdana;
+	font-size: 250%;
+}
+.headermitte p{
+	margin: 0;
+}
+.headerrechts {
+	color: black;
+	font-family: verdana;
+	border: 2px solid black;
+	border-radius: 10px;
+	margin-right: 1%;
+	padding: 0.3%;
+	cursor: pointer;
+}
+.headerrechts p {
+	margin: 0;
+}
+.bildercontainer {
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 8px;
+}
+.singlebild {
+	transition: 0.4s;
+	height: 250px;
+}
+.singlebild:active {
+	height: 370px;
+}
+.singlebild:active .bild-dropdown-container{
+	display: block;
+	opacity: 1;
+	margin-top: 3%;
+	transform: translateY(0px);
+	width: 100%;
+}
+.singlebild-dropdown {
+	display: flex;
+	justify-content: center;
+}
+.bild {
+    display: flex;
+	justify-content: space-between;
+	margin-right: 15%;
+	margin-left: 15%;
+	flex-wrap: wrap;
+}
+.bild img{
+	padding: 0px 60px;
+	transition: 0.3s;
+	cursor: pointer;
+}
+.bild img:hover{
+	transform: translateY(-10px);
+}
+.bild-dropdown-container {
+	text-align: center;
+	background-color: rgb(121, 170, 255);
+	border: 2px solid black;
+	border-radius: 10px;
+	margin-top: 0;
+	display: block;
+	transform: translateY(-220px);
+	transition: 0.4s;
+	opacity: 0;
+	width: 10%;
+	z-index: -1;
+}
+.bild-dropdown-content {
+	text-align: center;
+}
+.boxoben {
+	background-color: rgb(121, 170, 255);
+	border: 2px solid black;
+	border-radius: 10px;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	margin-left: 3%;
+	margin-right: 3%;
+}
+.UMlink {
+	margin-left: 35%;
+	margin-right: 35%;
+	padding: 1%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.stichpunktheader {
+	font-size: 250%;
+	font-family: verdana;
+	text-align: center;
+	padding: 0;
+}
+.sc {
+	margin-left: 20%;
+	margin-right: 20%;
+	margin-top: 3%;
+	margin-bottom: 3%;
+}
+.liste {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 0%;
+	margin-bottom: 0%;
+	flex-wrap: wrap;
+}
+.Stichpunkte {
+    background-color: rgb(121, 170, 255);
+	border: 2px solid black;
+	margin: 0;
+	display: flex;
+	width: 270px;
+	transition: 0.4s;
+	border-radius: 10px;
+	position: relative;
+}
+.Stichpunkte p {
+	margin: 0;
+}
+.Stichpunkte a:hover {
+    background-color: rgb(39, 140, 255);
+	box-shadow: 5px 10px 8px #888888;
+	transition: 0.4s;
+}
+.Stichpunkte::after {
+	content: "";
+	position: absolute;
+	height: 0.5%;
+	width: 10%;
+	background-color: rgb(121, 170, 255);
+	top: 97%;
+	left: 50%;
+	translate: -50% -50%;
+	padding: 2.5px;
+	border-radius: 10px;
+	transition: 0.4s;
+}
+.Stichpunkte:hover::after {
+	width: 97%;
+	background-color: black;
+}
+.Stichpunkte:hover > .droppercontainer > .content {
+	display: block;
+	opacity: 1;
+	transform: translateY(0);
+	align-self: center;
+	right: 50;
+}
+.Stichpunkte:hover > .droppercontainer > .dropper {
+	padding-right: 60%;
+}
+.Stichpunkte:hover {
+	width: 550px;
+}
+.droppercontainer {
+	padding-top: 80px;
+	padding-bottom: 80px;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	align-items: center;
+	position: relative;
+}
+.content {
+	transition: all 0.4s ease;
+	opacity: 0;
+	right: 10;
+	position: absolute;
+}
+.dropper {
+	cursor: pointer;
+	font-size: 175%;
+	transition: 0.4s;
+}
+.boxunten {
+	background-color: rgb(121, 170, 255);
+	border: 2px solid black;
+	border-radius: 10px;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	margin-left: 3%;
+	margin-right: 3%;
+}
+.hoverlinks {
+	transition: 0.4s;
+}
+.hoverlinks a {
+	position: relative;
+	text-decoration: none;
+	font-family: verdana;
+	font-size: 125%;
+	color: black;
+}
+.hoverlinks a::after {
+	content: "";
+	background: black;
+	height: 4px;
+	position: absolute;
+	left: 0;
+	bottom: -2;
+	border-radius: 10px;
+	transition: 0.5s;
+	width: 0;
+}
+.hoverlinks:hover a::after {
+	background-color: black;
+	width: 100%;
+}
+.FSlink {
+	margin-left: 35%;
+	margin-right: 35%;
+	padding: 1%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+footer {
+    background-color: rgba(10, 10, 10, 0.9);
+	margin-top: 3%;
+}
+.footercontainer {
+	padding-left: 5%;
+	padding-right: 5%;
+}
+.navigation {
+	display: flex;
+	justify-content: space-between;
+}
+.socials {
+	text-decoration: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 7%;
+	margin-bottom: 7%;
+}
+.socials a{
+	padding-left: 40px;
+	padding-right: 40px;
+}
+.socials img {
+	transition: 0.2s;
+}
+.socials img:hover {
+	transform: translateY(-10px);
+}
+.informationen {
+    margin-bottom: 0.5%;
+}
+.informationen h3{
+	color: white;
+	font-size: 150%;
+}
+.informationen ul{
+	color: white;
+	font-size: 140%;
+	list-style-type: none;
+}
+.informationen li {
+	margin-top: 20%;
+	margin-bottom: 20%;
+	transition: 0.4s;
+}
+.informationen a {
+	transition: 0.4s;
+}
+.informationen li:hover {
+	transform: translateX(5px);
+}
+.informationen a:hover {
+	color: rgb(76, 114, 158);
+}
+.infolinks {
+	text-decoration: none;
+	color: white;
+}
+#bild img:hover {
+	box-shadow: 5px 10px 8px #888888;
+    transition: 0.4s;
+}
+h1 {
+    color: white;
+    font-family: verdana;
+    font-size: 300%;
+	margin: 0; 
+}
+h2 {
+    font-size: 150%;
+	font-family: verdana;
+}
+.legaltext {
+	border-top: 1px solid white;
+	padding: 40px;
+	text-align: center;
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+}
+.copyright {
+	color: white;
+	font-family: times-new-roman;
+}
+.nachoben {
+	margin: 0;
+	position: relative;
+}
+.nachoben::after {
+	content: "";
+	background-color: white;
+	position: absolute;
+	top: 97%;
+	bottom: -1;
+	left: 50%;
+	translate: -50% -50%;
+	width: 0%;
+	border-radius: 3px;
+	transition: 0.4s
+}
+.nachoben:hover::after {
+	width: 100%
+}
+.nachoben a{
+	color: white;
+	font-family: arial-black;
+	font-size: 150%;
+	text-decoration: none;
+}
+.arrow {
+	margin: 0;
+	margin-left: 10px;
+	height: 23px;
+	padding-top: 5px;
+}
